@@ -1,0 +1,111 @@
+#Question 1
+#Write a pice of code that will output your name, age and province. Use variables for these and out put them
+
+first_name="Xiaofei"
+last_name="Chang"
+age_=28
+provience="Yunnan"
+
+print("Name:",first_name,last_name)
+print("Age:",age_)
+print("Provience:",provience)
+
+
+
+
+
+#Question 2
+Write a program that will have a variable for your age and day, month year of your birthday. Output the information using the print function
+birth_year=1994
+birth_month=8
+birth_day=8
+Age_=28
+print("My birthday is",birth_year,"/",birth_month,"/",birth_day,", and I am",Age_,"years old.")
+
+#improved version
+import datetime
+birth_dayNew=input("What is your Birthday Date? (in DD/MM/YYYY)?")
+birth_date=datetime.datetime.strptime(birth_dayNew,"%d/%m/%Y").date()
+today=datetime.date.today()
+Days_Calculate=today-birth_date
+Age_Calculate=Days_Calculate.days//365
+print("You are",Age_Calculate,"years old now.")
+
+
+
+
+
+#Question 3
+convert a number of months to years and months. (hint, use %)
+Months=eval(input("Please enter the months you would like to convert:"))
+Years=Months//12
+Remaining_Monthes=Months%12
+print("It is",Years,"years and",Remaining_Monthes,"months")
+
+
+
+
+#Question 4
+Inches=eval(input("Please enter the inches you would like to convert:"))
+Feets=Inches//12
+Remaining_inches=Inches%12
+print("It is",Feets,"feets and",Remaining_inches,"inches")
+
+
+
+
+#Question 5
+#Check a number is divisible by 5 and 6, 5 or 6, 5 or 6 but not both
+Result1,Result2,Result3=False,False,False
+Number=eval(input("Enter an integer:"))
+if Number%5==0 and Number%6==0:
+    Result1=True
+if Number%5==0 or Number%6 ==0:
+    Result2=True
+if Result2==True and Result1==False:
+    Result3=True
+print("Is",Number,"divisible by 5 and 6?",Result1) 
+print("Is",Number,"divisible by 5 or 6?",Result2) 
+print("Is",Number,"divisible by 5 or 6, but not both?",Result3)
+
+
+
+
+#Question 6
+#Coin Guess Game
+import random
+Guess=input("Please enter your guess, 'Head' or 'Tail':")
+Generate=random.randint(0,1)
+if Generate==0:
+    Generate='Head'
+else:
+    Generate='Tail'
+print("The Coin shows a",Generate)
+if Guess==Generate:
+    print("You win, you made the right guess!")
+else:
+    print("Sorry, you lose, you made the wrong guess.")
+
+
+
+#Question 7
+#Find charachter of an ASCII code
+CodeToFind=eval(input("Please enter the ASCII Code you would like to match:"))
+if 0<= CodeToFind <=127:
+     OutputChr=chr(CodeToFind)
+     print("The ASCII code you input is",CodeToFind,"The character matching with is:",OutputChr)
+else:
+    print("The code you input is out of range, please input a code between 0 to 127") 
+
+
+#Question 8
+#Money Converter?
+
+DollarToConvert=eval(input("Please enter the amount of dollar you would like to convert: "))
+Total_Cents=DollarToConvert*100
+Dollars=Total_Cents//100
+Quarters=(Total_Cents%100)//25
+Dimes=(Total_Cents%25)//10
+Nickels=((Total_Cents%25)%10)//5
+Pennies=((Total_Cents%25)%10)%5
+print("The Dollar amount you input is: ",int(Dollars),"Dollars",int(Quarters),"Quarters",int(Dimes),"Dimes",int(Nickels),"Nickels",int(Pennies),"Pennies")
