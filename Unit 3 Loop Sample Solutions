@@ -1,0 +1,40 @@
+#Question 1
+#Random number Guessing
+import random
+User_Guess=eval(input("Please enter your guess (between 1 and 10): "))
+Random_Number=random.randint(1,10)
+if User_Guess==Random_Number: print ("Congratulations, you gueesed the number.") 
+else: print("You are wrong, the number was",Random_Number)
+
+
+
+#Question 2
+#Find the Sqrt between 1 to 10
+import math
+Number=1
+for i in range(10):
+    print(Number," ",math.sqrt(Number))
+    Number+=1
+
+
+
+#Question 3
+#List the numbers divisible by 5 and 6 (ranged from 100 to 1000).
+Count=0
+for i in range(100,1001):
+    if (i%5==0 and i%6==0):
+        print(i,end=" ")
+        Count+=1
+        if(Count%10==0):
+            print()
+
+#Question 4
+#Coin toss simulation (1000000) times
+import random
+Heads=0
+Tails=0
+for i in range(1000000):
+    Toss=random.randint(0,1)
+    if Toss==1: Heads+=1
+    else: Tails+=1
+print("In 1000000 simulation, there are",Heads,"Heads, and",Tails,"Tails")
